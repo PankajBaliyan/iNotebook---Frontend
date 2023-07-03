@@ -1,12 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
+    let location = useLocation();
+    useEffect(() => {
+        // console.log(location.pathname);
+    }, [location]);
+
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <nav className="navbar navbar-expand-lg  navbar navbar-dark bg-dark">
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">
-                    Navbar
+                    iNotebook
                 </Link>
                 <button
                     className="navbar-toggler"
@@ -26,7 +31,9 @@ export default function Navbar() {
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
                             <Link
-                                className="nav-link active"
+                                className={`nav-link ${
+                                    location.pathname === '/' ? 'active' : ''
+                                }`}
                                 aria-current="page"
                                 to="/"
                             >
@@ -34,43 +41,16 @@ export default function Navbar() {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/about">
+                            <Link
+                                className={`nav-link ${
+                                    location.pathname === '/about'
+                                        ? 'active'
+                                        : ''
+                                }`}
+                                to="/about"
+                            >
                                 About
                             </Link>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <Link
-                                className="nav-link dropdown-toggle"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                                to="/PATH"
-                            >
-                                Dropdown
-                            </Link>
-                            <ul className="dropdown-menu">
-                                <li>
-                                    <Link className="dropdown-item" to="/PATH">
-                                        Action
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="dropdown-item" to="/PATH">
-                                        Another action
-                                    </Link>
-                                </li>
-                                <li>
-                                    <hr className="dropdown-divider" />
-                                </li>
-                                <li>
-                                    <Link className="dropdown-item" to="/PATH">
-                                        Something else here
-                                    </Link>
-                                </li>
-                            </ul>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link disabled">Disabled</Link>
                         </li>
                     </ul>
                     <form className="d-flex" role="search">
