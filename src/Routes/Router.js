@@ -1,34 +1,21 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from '../components/Home';
 import Navbar from '../components/Navbar';
 import About from '../components/About';
+import NoteState from '../context/notes/NoteState';
 
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: (
-            <div>
-                <Navbar />
-                <Home />
-            </div>
-        ),
-        // errorElement: <ErrorPage />,
-        errorElement: 'no page found',
-    },
-    {
-        path: '/about',
-        element: (
-            <div>
-                <Navbar />
-                <About />
-            </div>
-        ),
-        // errorElement: <ErrorPage />,
-        errorElement: 'no page found',
-    },
-]);
 const AppRouter = () => {
-    return <RouterProvider router={router} />;
+    return (
+        <BrowserRouter>
+            <NoteState>
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                </Routes>
+            </NoteState>
+        </BrowserRouter>
+    );
 };
 
 export default AppRouter;
