@@ -3,6 +3,7 @@
 iNotebook is an online note-taking application built using React and Node.js. It provides a user-friendly interface for creating and managing notes, with the added feature of user authentication to ensure that only logged-in users can access and share their notes.
 
 ## Project Preview
+
 1. Client : https://inotebook-0ybd.onrender.com
 2. Server : https://inotebook-server-ljv4.onrender.com
 

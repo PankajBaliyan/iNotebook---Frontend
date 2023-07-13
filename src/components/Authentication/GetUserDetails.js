@@ -19,4 +19,3 @@ const GetUserDetails = async () => {
 };
 
 export default GetUserDetails;
-
