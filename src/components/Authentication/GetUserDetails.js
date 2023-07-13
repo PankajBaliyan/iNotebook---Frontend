@@ -18,4 +18,5 @@ const GetUserDetails = async () => {
     }
 };
 
-module.exports = GetUserDetails;
+export default GetUserDetails;
+
