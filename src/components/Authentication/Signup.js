@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-const GetUserDetails = require('./GetUserDetails');
+import GetUserDetails from './GetUserDetails';
+
 
 const Signup = (props) => {
     const host = process.env.REACT_APP_HOST;
