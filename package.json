@@ -16,10 +16,10 @@
     },
     "scripts": {
         "start": "react-scripts start",
-        "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "both": "concurrently \"cd ../Backend/ && nodemon\" \"npm run start\""
+        "both": "concurrently \"cd ../Backend/ && nodemon\" \"npm run start\"",
+        "build": "webpack"
     },
     "eslintConfig": {
         "extends": [
@@ -38,5 +38,9 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "webpack": "^5.88.1",
+        "webpack-cli": "^5.1.4"
     }
 }
