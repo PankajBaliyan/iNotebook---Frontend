@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from '../components/Home';
 import Navbar from '../components/Navbar';
 import About from '../components/About';
@@ -38,6 +38,14 @@ const AppRouter = () => {
                         path="/signup"
                         element={<Signup showAlert={showAlert} />}
                     />
+                    <Route
+                        path="*"
+                        element={<Navigate to="/" />}
+                    />
+                    {/* <Route
+                        path="*"
+                        element={<Error />}
+                    /> */}
                 </Routes>
             </NoteState>
         </BrowserRouter>
